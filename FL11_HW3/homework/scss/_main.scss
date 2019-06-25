@@ -1,0 +1,259 @@
+@mixin underline {
+    content: '';
+    position: absolute;
+    background-color: $underlineColor;
+    display: block;
+    z-index: -1;
+}
+
+@mixin btn{
+    padding: 10px 60px;
+    border: 1px solid $btnColor;
+    background: $btnColor;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    
+    &:hover{
+        background: #fff;
+        color: $btnColor;
+    }
+}
+
+$map-fs: (
+    12 : 12px,
+    14 : 14px, 
+    18 : 18px,
+    20 : 20px,
+    22 : 20px,
+    40 : 40px, 
+    60 : 60px
+);
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body{
+    background-color: $bgColor;
+    color: $mainTextColor;
+}
+
+.landing-logo{
+    vertical-align: top;
+
+    img{
+        padding-right: 5px;
+        display: inline-block;
+    }
+
+    p{
+        padding-top: 5px;
+        display: inline-block;
+        text-align: center;
+        letter-spacing: 0.1em;
+        vertical-align: top;
+        font-size: map_get($map-fs, 18);
+        
+        span{
+            display: block;
+            letter-spacing: 0;
+            font-size: map_get($map-fs, 12);
+        }
+    }    
+}  
+
+.header{
+    padding: 30px 0 150px; 
+    background-image: $headerBgImg;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 600px;
+    border-bottom-right-radius: 400px 200px;
+
+    &-wrap{
+        max-width: $containerWidth;
+        padding: 10px;
+        margin: 0 auto;
+        height: 650px;  
+    }
+
+    &_heading{
+        position: relative;
+        padding-top: 75px;
+        width: 500px;
+        font-size: map_get($map-fs, 60);
+        font-weight: bold;  
+        z-index: 1;  
+    }
+
+    &_text{
+        padding: 75px 0 40px;
+        width: 600px;
+        font-size: map_get($map-fs, 20);
+    }
+
+    &_button{
+        @include btn;
+    }
+
+    &_heading::after {
+        @include underline;
+        height: 25px;
+        width: 50%;
+        bottom: 10px;
+    }
+    
+}
+
+.section{
+    margin: 0 auto;
+    padding: 50px 10px 150px;
+    position: relative;
+    max-width: $containerWidth;
+    background-color: $bgColor;
+    text-align: center;
+
+    &_text{
+        position: relative;
+        display: block;
+        font-size: map_get($map-fs, 40);
+        font-weight: bold;
+        margin-bottom: 20px;
+        z-index: 1;   
+    }
+
+    &_text::after{
+        @include underline;
+        height: 14px;
+        width: 184px;
+        bottom: 8px;
+        left: 50.6%;
+    }
+
+    &_card_wrap{
+        display: flex;
+        justify-content: center;
+    }
+
+    &_card{
+        padding: 15px;
+        width: 300px;
+        background: $contentColor;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;  
+            font-style: 16px;
+                
+        &_img{
+            width: 100%;
+        }
+
+        &_heading{
+            position: relative;
+            padding: 10px 0px;
+            font-size: map_get($map-fs, 22);
+            font-weight: bold;
+            z-index: 1;
+        }
+            
+        &_underline{
+            @include underline;
+            width: 58%;
+            height: 10px;
+            bottom: 10px;
+            left: 21%;
+        }
+
+        &_text{
+            font-size: map_get($map-fs, 14);
+            color: #b6c0ce;
+        }
+        
+    }
+
+    &_card + &_card{
+        margin-left: 15px;
+    }
+    
+    &_card:nth-child(2) &_card_underline{
+        width: 50%;
+        left: 25%;
+    }
+
+    &_card:nth-child(3) &_card_underline{
+        width: 38%;
+        left: 31%;
+    }
+
+   &_banner{
+        display: flex;
+        width: 70%;
+        margin: 0 15%;
+        padding: 20px 40px;
+        position: absolute;
+        bottom: -25px;
+        background-image: $gradient;
+        align-items: center;
+        
+        &_text_wrap{
+            margin-left: 50px;
+            width: 60%;
+            text-align-last: left;
+        }
+
+        &_heading{
+            position: relative;
+            padding-bottom: 10px;
+            font-size: map_get($map-fs, 22);
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        &_heading::after{
+            @include underline;
+            width: 45px;
+            height: 11px;
+            bottom: 11px;
+            left: 79px;
+        }
+
+        &_text{
+            color: #fff;
+            font-style: map_get($map-fs, 14);
+        }
+        
+        &_button{
+            @include btn;
+        }
+    
+    }
+    
+}
+  
+.footer{
+    padding: 50px 0; 
+    background: $contentColor;
+    color: #fff;
+    font-family: $footerFont;
+    
+    .footer_logo{
+       @extend .landing-logo 
+    }
+
+    &-wrap{
+        padding: 10px;
+        max-width: $containerWidth;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .footer_text{
+            width: 400px;   
+        }
+    }
+}
