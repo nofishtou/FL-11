@@ -1,0 +1,102 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+p{
+  text-align: center;
+}
+
+i{
+  margin: 0.25rem;
+}
+
+.container{
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.header{
+  font-size: 36px;
+  color: skyblue;
+}
+
+.input-add{
+  display: inline-block;
+  width: 80%;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 18px;
+}
+
+.plus-btn{
+  margin-left: 5%;
+  padding: 0.25rem 0.5rem;
+  font-size: 24px;
+  color: #fff;
+  background: rgba(170, 178, 178, 0.9);
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.plus-btn:disabled {
+  opacity: 0.7;
+}
+
+hr{
+  color: aqua;
+}
+
+.ulist{
+  list-style: none;
+  padding-left: 0;
+}
+
+li{
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: skyblue;
+}
+
+li:first-child{
+  margin-top: 0.5rem;
+}
+
+input[type = checkbox]{
+  margin: 0.25rem;
+}
+
+li input[type = text]{
+  padding: 0.25rem;
+}
+
+.delete{
+  margin-left: auto;;
+}
+
+.btn-i{
+  cursor: pointer;
+  color: rgb(80, 15, 201);
+}
+
+.btn-i:hover{
+  opacity: 0.5;
+}
+
+.notdisplay{
+  display: none;
+}
+
+.display{
+  display: block;
+}
+
+[draggable] {
+  user-select: none;
+}
+
