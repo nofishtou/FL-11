@@ -1,0 +1,90 @@
+/* Your styles go here */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.display{
+  display: block;
+}
+.nodisplay{
+  display: none;
+}
+
+.container{
+  padding-top: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-header{
+  margin: 1rem 0;
+}
+
+ul{
+  list-style: none;
+}
+
+ul span{
+  font-size: 18px;
+  padding: 1rem 2rem;
+}
+
+li button > img{
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+li + li {
+  margin-top: 1.25rem;
+}
+
+span{
+  margin: 0 0.25rem;
+}
+
+input[type = text]{
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+
+input[type = text]:focus{
+  border: 1px solid blue;
+}
+
+button{
+  padding: 0.5rem;
+  border: 1px solid #000;
+  background: none;
+  border-radius: 25%;
+  outline: none;
+  cursor: pointer;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  -ms-border-radius: 25%;
+  -o-border-radius: 25%;
+}
+
+.done{
+  background: grey;
+  color: #fff;
+  border-radius: 25%;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  -ms-border-radius: 25%;
+  -o-border-radius: 25%;
+}
+
+.modal{
+  width: 200px;
+  height: 100px;
+  background: red;
+  color: white;
+  position: absolute;
+  top: 25px;
+}
